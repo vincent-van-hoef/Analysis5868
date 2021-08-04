@@ -6,6 +6,8 @@ RUN apt-get update \
     git \
     wget
 
+RUN tlmgr update --self && tlmgr install amsmath
+
 RUN install2.r BiocManager && /usr/local/lib/R/site-library/littler/examples/installBioc.r \
     DESeq2 \
     && rm -rf /tmp/downloaded_packages/
